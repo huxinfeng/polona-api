@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta name="keywords" content="Apifox,接口文档,接口,Apifox" />
+    <meta name="description" content="接口文档在线分享" />
+    <link rel="icon" href="https://cdn.apifox.cn/logo/apifox-logo-512.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.apifox.cn/mirror-www/apidoc/umi.86491a35.css"
+    />
+    <script>
+      window.routerBase = "/apidoc/";
+    </script>
+    <script>
+      //! umi version: 3.3.6
+    </script>
+  </head>
+
+  <body class="body-theme-background-light">
+    <script type="text/javascript">
+      (() => {
+        var body = document.getElementsByTagName("body")[0];
+        if (window.devicePixelRatio && window.devicePixelRatio > 1) {
+          body.className = body.className + " retina";
+        }
+        if (navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+          body.className = body.className + " chrome";
+        }
+      })();
+    </script>
+    <script type="text/javascript">
+      window.theme = {};
+      (() => {
+        var darkBackgroundColor = "#1b1c21";
+        var lightBackgroundColor = "#ffffff";
+        var greyBackgroundColor = "#2D2D2D";
+        var lightBrownBackgroundColor = "#F9F4E7";
+        var darkBlueBackgroundColor = "#262B33";
+        var defaultTheme = "lightPurple";
+
+        var bgColor = {
+          dark: {
+            label: "dark",
+            background: "dark",
+            monacoEditorTheme: "vs-dark-custom",
+            monacoEditorThemeProps: {
+              base: "vs-dark",
+              inherit: true,
+              rules: [{ background: "#15161A" }],
+              colors: {
+                "editor.background": "#15161A",
+              },
+            },
+            rjvTheme: "eighties",
+            recommend: true,
+            backgroundColor: darkBackgroundColor,
+            ResultChartBar: {
+              stack: ["#448b73", "#de6783", "#444444"],
+            },
+            ResultChartPie: {
+              stack: ["#4ab793", "#fc97af", "#444444"],
+              stroke: "#383838",
+            },
+          },
+          light: {
+            label: "light",
+            background: "light",
+            monacoEditorTheme: "vs",
+            rjvTheme: "rjv-default",
+            backgroundColor: lightBackgroundColor,
+            ResultChartBar: {
+              stack: ["#46d6a0", "#f8587d", "#dddddd"],
+            },
+            ResultChartPie: {
+              stack: ["#46d6a0", "#f8587d", "#dddddd"],
+              stroke: "#fff",
+            },
+          },
+          grey: {
+            label: "grey",
+            background: "grey",
+            monacoEditorTheme: "vs-dark-grey",
+            monacoEditorThemeProps: {
+              base: "vs-dark",
+              inherit: true,
+              rules: [{ background: "#242424" }],
+              colors: {
+                "editor.background": "#242424",
+              },
+            },
+            rjvTheme: "eighties",
+            recommend: true,
+            backgroundColor: greyBackgroundColor,
+            ResultChartBar: {
+              stack: ["#448b73", "#de6783", "#444444"],
+            },
+            ResultChartPie: {
+              stack: ["#4ab793", "#fc97af", "#444444"],
+              stroke: "#383838",
+            },
+          },
+          lightbrown: {
+            label: "lightBrown",
+            background: "lightbrown",
+            monacoEditorTheme: "vs-lightbrown-custom",
+            monacoEditorThemeProps: {
+              base: "vs",
+              inherit: true,
+              rules: [{ background: "#f9f4e7" }],
+              colors: {
+                "editor.background": "#f9f4e7",
+              },
+            },
+            rjvTheme: "rjv-default",
+            recommend: true,
+            backgroundColor: lightBrownBackgroundColor,
+            ResultChartBar: {
+              stack: ["#46d6a0", "#f8587d", "#dddddd"],
+            },
+            ResultChartPie: {
+              stack: ["#46d6a0", "#f8587d", "#dddddd"],
+              stroke: "#fff",
+            },
+          },
+          darkblue: {
+            label: "darkblue",
+            background: "darkblue",
+            monacoEditorTheme: "vs-darkblue",
+            monacoEditorThemeProps: {
+              base: "vs-dark",
+              inherit: true,
+              rules: [{ background: "#1E2229" }],
+              colors: {
+                "editor.background": "#1E2229",
+              },
+            },
+            rjvTheme: "eighties",
+            recommend: true,
+            backgroundColor: darkBlueBackgroundColor,
+            ResultChartBar: {
+              stack: ["#448b73", "#de6783", "#444444"],
+            },
+            ResultChartPie: {
+              stack: ["#4ab793", "#fc97af", "#444444"],
+              stroke: "#383838",
+            },
+          },
+        };
+        var primaryColor = {
+          purple: {
+            primary: "purple",
+            label: "purple",
+          },
+          cerulean: {
+            primary: "cerulean",
+            label: "cerulean",
+          },
+          blue: {
+            primary: "blue",
+            label: "blue",
+          },
+          gold: {
+            primary: "gold",
+            label: "gold",
+          },
+          blue2: {
+            primary: "blue2",
+            label: "blue2",
+          },
+          green: {
+            primary: "green",
+            label: "green",
+          },
+          orange: {
+            primary: "orange",
+            label: "orange",
+          },
+          pink: {
+            primary: "pink",
+            label: "pink",
+          },
+          red: {
+            primary: "red",
+            label: "red",
+          },
+          silver: {
+            primary: "silver",
+            label: "silver",
+          },
+        };
+
+        window.theme.bgColor = bgColor;
+        window.theme.map = Object.keys(bgColor).reduce((res, bg) => {
+          const bgElement = bgColor[bg];
+          for (const primary in primaryColor) {
+            var element = primaryColor[primary];
+            var value = `${bg}${primary[0].toUpperCase()}${primary.substring(
+              1
+            )}`;
+            res[value] = {
+              ...bgElement,
+              ...element,
+              value,
+              label: `${element.label} · ${bgElement.label}`,
+            };
+          }
+          return res;
+        }, {});
+
+        window.theme.change = (themeKey) => {
+          window.theme.key = themeKey;
+          if (window.isDesktop) {
+            process.env.currentTheme = themeKey;
+          } else {
+            // 2023-01-13 暂时关闭主题获取，同源部署 web 时会读取到不兼容的主题设置
+            // localStorage.setItem('themeConfig', themeKey);
+          }
+          if (!window.theme.map[themeKey]) {
+            window.theme.key = defaultTheme;
+          }
+          var theme =
+            window.theme.map[themeKey] || window.theme.map[defaultTheme];
+          const body = document.getElementsByTagName("html")[0];
+          body.style.backgroundColor = theme.backgroundColor;
+          body.setAttribute("theme", theme.background);
+
+          body.className =
+            body.className
+              .replace(/\s*body\-theme\-background\-[^\s]+/, "")
+              .replace(/\s*body\-theme\-primary\-[^\s]+/, "") +
+            ` body-theme-background-${theme.background} ` +
+            ` body-theme-primary-${theme.primary} `;
+        };
+
+        var currentTheme;
+        try {
+          if (window.isDesktop && process.argv) {
+            const searchThemeKeyPrefix = "--theme-key=";
+            for (const argItem of process.argv) {
+              if (
+                argItem.startsWith(searchThemeKeyPrefix) &&
+                argItem.length > searchThemeKeyPrefix.length
+              ) {
+                currentTheme = argItem.substring(searchThemeKeyPrefix.length);
+                break;
+              }
+            }
+          } else if (!window.isDesktop) {
+            // 2023-01-13 暂时关闭主题获取，同源部署 web 时会读取到不兼容的主题设置
+            // currentTheme = localStorage.getItem('themeConfig');
+          }
+        } catch (e) {}
+
+        currentTheme = currentTheme || defaultTheme;
+
+        window.theme.change(currentTheme);
+
+        var body = document.body;
+        if (window.devicePixelRatio && window.devicePixelRatio > 1) {
+          body.className = body.className + " retina";
+        }
+        if (navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+          body.className = body.className + " chrome";
+        }
+      })();
+    </script>
+    <noscript>Sorry, we need js to run correctly!</noscript>
+    <div id="root">
+      <style>
+        html,
+        body,
+        #root {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        #root {
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+        }
+
+        .page-loading-warp {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 98px;
+        }
+
+        .ui-spin {
+          position: absolute;
+          display: none;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          color: rgba(0, 0, 0, 0.65);
+          color: #9373ee;
+          font-size: 14px;
+          font-variant: tabular-nums;
+          line-height: 1.5;
+          text-align: center;
+          list-style: none;
+          opacity: 0;
+          -webkit-transition: -webkit-transform 0.3s
+            cubic-bezier(0.78, 0.14, 0.15, 0.86);
+          transition: -webkit-transform 0.3s
+            cubic-bezier(0.78, 0.14, 0.15, 0.86);
+          transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+          transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86),
+            -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+          -webkit-font-feature-settings: "tnum";
+          font-feature-settings: "tnum";
+        }
+
+        .ui-spin-spinning {
+          position: static;
+          display: inline-block;
+          opacity: 1;
+        }
+
+        .ui-spin-dot {
+          position: relative;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          font-size: 20px;
+        }
+
+        .ui-spin-dot-item {
+          position: absolute;
+          display: block;
+          width: 9px;
+          height: 9px;
+          background-color: #9373ee;
+          border-radius: 100%;
+          -webkit-transform: scale(0.75);
+          -ms-transform: scale(0.75);
+          transform: scale(0.75);
+          -webkit-transform-origin: 50% 50%;
+          -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          opacity: 0.3;
+          -webkit-animation: antspinmove 1s infinite linear alternate;
+          animation: antSpinMove 1s infinite linear alternate;
+        }
+
+        .ui-spin-dot-item:nth-child(1) {
+          top: 0;
+          left: 0;
+        }
+
+        .ui-spin-dot-item:nth-child(2) {
+          top: 0;
+          right: 0;
+          -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+        }
+
+        .ui-spin-dot-item:nth-child(3) {
+          right: 0;
+          bottom: 0;
+          -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+        }
+
+        .ui-spin-dot-item:nth-child(4) {
+          bottom: 0;
+          left: 0;
+          -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+        }
+
+        .ui-spin-dot-spin {
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          -webkit-animation: antrotate 1.2s infinite linear;
+          animation: antRotate 1.2s infinite linear;
+        }
+
+        .ui-spin-lg .ui-spin-dot {
+          width: 32px;
+          height: 32px;
+          font-size: 32px;
+        }
+
+        .ui-spin-lg .ui-spin-dot i {
+          width: 14px;
+          height: 14px;
+        }
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          .ui-spin-blur {
+            background: #fff;
+            opacity: 0.5;
+          }
+        }
+
+        @-webkit-keyframes antSpinMove {
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes antSpinMove {
+          to {
+            opacity: 1;
+          }
+        }
+
+        @-webkit-keyframes antRotate {
+          to {
+            -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+          }
+        }
+
+        @keyframes antRotate {
+          to {
+            -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+          }
+        }
+      </style>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          min-height: 420px;
+        "
+      >
+        <div class="page-loading-warp">
+          <div class="ui-spin ui-spin-lg ui-spin-spinning">
+            <span class="ui-spin-dot ui-spin-dot-spin"
+              ><i class="ui-spin-dot-item"></i><i class="ui-spin-dot-item"></i
+              ><i class="ui-spin-dot-item"></i><i class="ui-spin-dot-item"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.apifox.cn/www/assets/js/apifox-apidoc-event-tracking.min.js"
+      async="async"
+    ></script>
+    <script>
+      window.eventTracking = {
+        dataLayer: [],
+      };
+      window.eventTracking.report = function () {
+        window.eventTracking.dataLayer.push(arguments);
+      };
+    </script>
+    <script src="https://cdn.staticfile.org/react/17.0.2/umd/react.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <script src="https://cdn.staticfile.org/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+    <script src="https://cdn.staticfile.org/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.apifox.cn/mirror-www/apidoc/8.992f2e64.async.js"></script>
+    <script src="https://cdn.apifox.cn/mirror-www/apidoc/5.5c6e26d6.async.js"></script>
+    <script src="https://cdn.apifox.cn/mirror-www/apidoc/1.41b81de5.async.js"></script>
+    <script src="https://cdn.apifox.cn/mirror-www/apidoc/37.b5c98e9b.js"></script>
+  </body>
+</html>
